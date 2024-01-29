@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} Book-detail {% endblock title %}
+{% block content %}
+<h2>Landing page</h2>
+    <img style="width:400px; height:500px;" src="{{ books.image_book.url }}"><br>
+    {{ book.title }}<br>
+    {{ book.isbn }}<br>
+    {{ book.price }}<br>
+    {{ book.publisher }}<br>
+    {{ book.description }}<br>
+    {{ book.create_at }}<br>
+<a href="{% url 'books:book-list' %}">Books</a>
+
+{% endblock content %}

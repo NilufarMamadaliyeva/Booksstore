@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+{% endblock content %}
+<h2>Landing page</h2>
+{% if user.is_authentication %}
+    <p><a href="{% url 'books:book-list' %}">Books</a></p>
+    <p><a href="{% url 'users:logout' %}">Logout</a></p>
+    <p><a href="{% url 'users:regis' %}">Register</a></p>
+    
+{% else %}
+    <p><a href="#">Books</a></p>
+    <p><a href="{% url 'users:login' %}">Logout</a></p>
+    <p><a href="{% url 'users:regis' %}">Register</a></p>
+{% endif %}
+    
+{% endblock content %}
